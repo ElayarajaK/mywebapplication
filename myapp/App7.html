@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="fname" id="firstName"/>
+
+    <button id="insertion" onclick="insertData()">InsertData</button>
+    <button id="readdata" onclick="readData()">GetData</button>
+
+    <h1 id="display"></h1>
+    <script>
+
+        let firstName=[];
+         
+        function insertData(){
+            
+           let getFirstName = document.getElementById("firstName").value;
+           alert(getFirstName)
+            firstName.push(getFirstName);
+           console.log(firstName.length)
+           console.log(firstName)
+        }
+       
+        
+
+        function readData(){
+            console.log(firstName.length)
+            firstName.forEach((v,i)=>{
+                document.getElementById("display").innerText +=v
+            })
+        }
+
+
+    </script>
+    
+</body>
+</html>

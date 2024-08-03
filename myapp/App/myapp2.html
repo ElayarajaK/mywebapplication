@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        let workOfice=true;
+        let empStatus = ()=>{
+            return(
+                new Promise((resolve,reject)=>{
+                    if(workOfice){
+                        resolve("Employers are working ..")
+                    }
+                    else{
+                        reject("Employers are not work")
+                    }
+                })
+            )
+        }
+        empStatus().then(()=>{
+            console.log("from console 1");
+        })
+        .then(()=>{
+            console.log("from console 2")
+        }).then(()=>{
+            console.log("from console 3")
+        })
+        .catch(()=>{
+            console.log("Error is hapening")
+        })
+        .finally(()=>{
+            console.log("finally done . .")
+        })
+
+         function getdata(){
+            return new Promise((resolve,reject)=>{
+                if(true){
+                    resolve("resolve is executing ..")
+                }
+            })
+        }
+ async function getFunc(){
+    let result = await getdata();
+    
+    console.log(result)
+ }
+
+ getFunc().then(()=>{
+    console.log("again again is executing")
+ }).then(()=>{
+    console.log("againg 123 executing ")
+ })
+       
+    </script>
+    
+</body>
+</html>

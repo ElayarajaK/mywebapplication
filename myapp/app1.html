@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage Multiple Inputs</title>
+</head>
+<body>
+    <h1>LocalStorage Multiple Inputs Example</h1>
+
+    <label for="inputData1">Enter data 1:</label>
+    <input type="text" id="inputData1" /><br><br>
+
+    <label for="inputData2">Enter data 2:</label>
+    <input type="text" id="inputData2" /><br><br>
+
+    <label for="inputData3">Enter data 3:</label>
+    <input type="text" id="inputData3" /><br><br>
+
+    <button onclick="saveData()">Save Data</button>
+    <button onclick="loadData()">Load Data</button>
+
+    <p id="displayData"></p>
+
+    <script>
+        function saveData() {
+            const inputData1 = document.getElementById('inputData1').value;
+            const inputData2 = document.getElementById('inputData2').value;
+            const inputData3 = document.getElementById('inputData3').value;
+
+            const data = {
+                data1: inputData1,
+                data2: inputData2,
+                data3: inputData3
+            };
+
+            localStorage.setItem('myData', JSON.stringify(data));
+            alert('Data saved!');
+        }
+
+        function loadData() {
+            const storedData = localStorage.getItem('myData');
+            if (storedData) {
+                const data = JSON.parse(storedData);
+                document.getElementById('displayData').innerHTML = 
+                    `Data 1: ${data.data1} <br> Data 2: ${data.data2} <br> Data 3: ${data.data3}`;
+            } else {
+                document.getElementById('displayData').textContent = 'No data found';
+            }
+        }
+    </script>
+</body>
+</html>

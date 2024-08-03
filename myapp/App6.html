@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let studentData=["raja","apj","akbar","vimal","sakthi"];
+
+        console.log(studentData.length)
+
+        /*for(let i=0;i<studentData.length;i++){
+            document.writeln("<h1> index is : "+i+" value is :"+studentData[i]+"</h1>")
+        }*/
+
+        /*
+        for(let index in studentData){
+            document.writeln("<h1> index is : "+index+" value is :"+studentData[index]+"</h1>")
+        }
+
+        for(let temp of studentData){
+            document.writeln("<h1>  "+temp+"</h1>")
+        }*/
+
+        studentData.forEach((v,i)=>{
+           document.writeln("<h1>"+v + " , "+i+"</h1>")
+        });
+
+        studentData.push("jhon")
+        
+        document.writeln(studentData)
+        studentData.push("vickram")
+        
+        document.writeln("<br/> "+studentData)
+        studentData.unshift("C#")
+        document.writeln("<br/> "+studentData)
+        studentData.pop();
+        document.writeln("<br/> "+studentData)
+
+
+    </script>
+    
+</body>
+</html>

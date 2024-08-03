@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let studentData={
+            name :"APJ",
+            address:"chennai",
+            fee:20000,
+            feeStatus:"paid",
+            courses:{
+                course1 :"python",
+                course2 :"java",
+                course3 :"react",
+                course4 :"devops"
+            }
+            
+
+        }
+
+        document.writeln(studentData.courses.course1)
+
+        for(let key in studentData){
+            
+            
+            if(typeof(studentData[key])=="object"){
+                for(let key1 in studentData.courses)
+                {
+                    document.writeln("<h1>"+key1+" : "+studentData.courses[key1]+"</h1>")
+                }
+            }
+            document.writeln("<h1>"+key+" : "+studentData[key]+"</h1>")
+            
+        }
+
+
+       
+
+        
+    </script>
+</body>
+</html>
